@@ -7,7 +7,7 @@
 }
 
 .header {
-  color: black;
+  color: white;
   position: fixed;
   display: flex;
   flex-direction: column-reverse;
@@ -15,6 +15,7 @@
   width: 50%;
   top: 0;
   left: 0;
+  background-color: black;
 }
 .header-navigation {
   position: fixed;
@@ -22,25 +23,26 @@
   width: 45%;
   justify-content: space-between;
 }
-.header-navigation ul {
-  display: flex;
-  justify-content: space-between;
-  font-size: 18px;
-  font-family: Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
-  list-style-type: none;
-}
 .header-navigation li {
   margin: 5px;
 }
 .header-presentation {
   position: fixed;
   top: 35px;
-  width: 10%;
+  width: 12%;
   text-transform: uppercase;
   font-family: Arial, Helvetica, sans-serif;
-  margin-left: 40px;
+  margin-left: 45px;
   font-size: 18px;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  list-style-type: none;
 }
 
 .infos {
@@ -52,12 +54,12 @@
 
 .title {
   font-family: "crypto";
-  opacity: 0.8;
   background-color: none;
   font-size: 160px;
   text-transform: uppercase;
   z-index: 1;
   font-variation-settings: "wght" 10;
+  color: white;
 }
 
 span {
@@ -65,17 +67,12 @@ span {
   transition: font-variation-settings 0.5s ease-in-out;
 }
 
-.navigation {
-  position: fixed;
-  bottom: 0;
-  width: 50%;
-}
-.navigation ul {
-  flex-direction: column;
-}
-
 .last-project {
   font-variation-settings: "wght" 10;
+}
+
+.border {
+  border-bottom: 13px solid white;
 }
 
 .content {
@@ -84,7 +81,6 @@ span {
 .content .image {
   width: 50%;
   flex-direction: column;
-  background-color: black;
 }
 .content .image section {
   display: flex;
@@ -101,17 +97,14 @@ span {
   margin-bottom: 30px;
   margin-top: 30px;
 }
-.content .image-text {
-  font-size: 13px;
-  color: white;
-  position: fixed;
-  flex-direction: row-reverse;
+.content .image section .section-image-text {
+  display: flex;
+  font-size: 18px;
+  width: 90%;
   font-family: Arial, Helvetica, sans-serif;
-  top: 0px;
-  right: 0;
-  writing-mode: vertical-rl;
-  text-align: center;
-  transform: rotate(180deg);
+}
+.content .image section .number {
+  margin-right: 30px;
 }
 
 /*# sourceMappingURL=style.css.map */

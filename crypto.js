@@ -33,18 +33,15 @@ let alpha = [
 document.addEventListener('scroll', function () {
 	const pixels = window.pageYOffset;
 	const titleProjectElement = document.querySelector('div.title');
-	let textImageElement = document.querySelector('.image-text');
 
 	const sections = document.querySelectorAll('section');
 
 	sections.forEach((section, indexSection) => {
 		//-38
 		if (section.offsetTop - 8 <= pixels) {
-			let textImage = section.getAttribute('data-text');
 			let titleProject = section.getAttribute('data-title');
 
 			//important!
-			textImageElement.textContent = textImage;
 			titleProjectElement.innerHTML = '';
 			titleProject.split('').forEach((letter, indexLetter) => {
 				let spanLetter = document.createElement('span');
