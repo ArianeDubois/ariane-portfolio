@@ -1,0 +1,22 @@
+{
+	"name": "2021",
+	"version": "1.0.0",
+	"description": "",
+	"main": "crypto.js",
+	"scripts": {
+		"sass": "sass --watch ./scss/style.scss:./css/style.css"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ArianeDubois/ariane-portfolio.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/ArianeDubois/ariane-portfolio/issues"
+	},
+	"homepage": "https://github.com/ArianeDubois/ariane-portfolio#readme",
+	"dependencies": {
+		"sass": "^1.42.1"
+	}
+}
