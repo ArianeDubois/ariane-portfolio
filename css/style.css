@@ -7,33 +7,49 @@
 }
 
 .header {
-  color: white;
+  color: black;
   position: fixed;
-  display: flex;
-  flex-direction: column-reverse;
   height: 100%;
-  width: 50%;
   top: 0;
   left: 0;
-  background-color: black;
 }
 .header-navigation {
   position: fixed;
-  top: 0;
-  width: 45%;
+  width: 100%;
   justify-content: space-between;
 }
 .header-navigation li {
   margin: 5px;
 }
-.header-presentation {
+.header .title {
   position: fixed;
-  top: 35px;
-  width: 12%;
+  font-family: "crypto";
+  background-color: none;
+  font-size: 180px;
+  line-height: 0;
+  margin-left: 45px;
+  text-transform: uppercase;
+  font-variation-settings: "wght" 10;
+  color: black;
+}
+.header .image-text {
+  font-size: 20px;
+  color: #1a1a1a;
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 11%;
+  width: 45%;
+  text-transform: uppercase;
+  margin-left: 45px;
+}
+.header-footer {
+  position: fixed;
+  bottom: 3%;
+  width: 45%;
   text-transform: uppercase;
   font-family: Arial, Helvetica, sans-serif;
   margin-left: 45px;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 ul {
@@ -49,53 +65,40 @@ ul {
   scroll-snap-type: mandatory;
   /* scroll-snap-points-y: repeat(1000px); */
   scroll-snap-type: y mandatory;
-  width: 50%;
-}
-
-.title {
-  font-family: "crypto";
-  background-color: none;
-  font-size: 160px;
-  text-transform: uppercase;
-  z-index: 1;
-  font-variation-settings: "wght" 10;
-  color: white;
 }
 
 span {
   line-height: 1em;
-  transition: font-variation-settings 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out 10s;
 }
 
 .last-project {
   font-variation-settings: "wght" 10;
 }
 
-.border {
-  border-bottom: 13px solid white;
-}
-
 .content {
   display: flex;
+  justify-content: flex-end;
 }
 .content .image {
-  width: 50%;
   flex-direction: column;
+  width: 45%;
 }
 .content .image section {
-  display: flex;
-  /* height: 2000px; */
-  flex-direction: column;
   align-items: center;
-  /* height: 1000px; */
+  position: relative;
+  width: auto;
   height: 1000px;
-  /* margin-bottom: 10px; */
   scroll-snap-align: start;
 }
 .content .image section img {
+  height: auto;
+  width: 100%;
+  margin: 20px;
+}
+.content .image section .img-forte {
+  height: auto;
   width: 90%;
-  margin-bottom: 30px;
-  margin-top: 30px;
 }
 .content .image section .section-image-text {
   display: flex;

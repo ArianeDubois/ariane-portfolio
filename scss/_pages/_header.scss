@@ -1,31 +1,52 @@
 .header {
-	color: white;
+	color: black;
 	position: fixed;
-	display: flex;
-	flex-direction: column-reverse;
+	// flex-direction: column-reverse;
 	height: 100%;
-	width: 50%;
 	top: 0;
 	left: 0;
-	background-color: black;
 	&-navigation {
 		position: fixed;
-		top: 0;
-		width: 45%;
+		width: 100%;
+
 		justify-content: space-between;
 
 		li {
 			margin: 5px;
 		}
 	}
-	&-presentation {
+
+	.title {
 		position: fixed;
-		top: 35px;
-		width: 12%;
+		font-family: 'crypto';
+		background-color: none;
+		font-size: 180px;
+		line-height: 0;
+		margin-left: 45px;
+		text-transform: uppercase;
+		font-variation-settings: 'wght' 10;
+		color: black;
+	}
+	.image-text {
+		font-size: 20px;
+		color: rgb(26, 26, 26);
+		position: fixed;
+		font-family: Arial, Helvetica, sans-serif;
+		margin-top: 11%;
+		// margin-top: 18%;
+		width: 45%;
+		text-transform: uppercase;
+		margin-left: 45px;
+	}
+
+	&-footer {
+		position: fixed;
+		bottom: 3%;
+		width: 45%;
 		text-transform: uppercase;
 		font-family: Arial, Helvetica, sans-serif;
 		margin-left: 45px;
-		font-size: 18px;
+		font-size: 20px;
 	}
 }
 
@@ -33,7 +54,6 @@ ul {
 	display: flex;
 	justify-content: space-between;
 	font-size: 18px;
-
 	font-family: Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
 	list-style-type: none;
@@ -42,50 +62,35 @@ ul {
 	scroll-snap-type: mandatory;
 	/* scroll-snap-points-y: repeat(1000px); */
 	scroll-snap-type: y mandatory;
-	width: 50%;
-}
-
-.title {
-	font-family: 'crypto';
-	background-color: none;
-	font-size: 160px;
-	text-transform: uppercase;
-	z-index: 1;
-	font-variation-settings: 'wght' 10;
-	color: white;
+	// width: 5%;
 }
 
 span {
 	line-height: 1em;
-	transition: font-variation-settings 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out 10s;
 }
-
-// .navigation {
-// 	ul {
-// 		flex-direction: column;
-// 	}
-// 	position: fixed;
-// 	width: 50%;
-// }
 
 .last-project {
 	font-variation-settings: 'wght' 10;
 }
 
-.border {
-	border-bottom: 13px solid white;
-}
-// .image-text {
-// 	font-size: 13px;
-// 	color: rgb(26, 26, 26);
-// 	position: fixed;
-// 	// flex-direction: row-reverse;
-// 	font-family: Arial, Helvetica, sans-serif;
-// 	// margin-left: 45%;
-// 	margin-top: 10%;
-// 	// height: 65%;
-// 	// width: 50%;
-// 	writing-mode: vertical-rl;
-// 	text-align: center;
-// 	// transform: rotate(180deg);
+// .erase {
+// 	opacity: 0.2;
+// 	// animation: efface 0.5s ease-in-out 1s;
+// 	// transition: opacity 0.5s ease-in-out 1s;
+
+// 	// transition: opacity 0.5s ease-in;
+// 	// color: white;
+// }
+// .border {
+// 	border-bottom: 13px solid white;
+// }
+
+// @keyframes efface {
+// 	0% {
+// 		opacity: 1;
+// 	}
+// 	100% {
+// 		opacity: 0;
+// 	}
 // }

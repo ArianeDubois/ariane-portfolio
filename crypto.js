@@ -33,20 +33,23 @@ let alpha = [
 document.addEventListener('scroll', function () {
 	const pixels = window.pageYOffset;
 	const titleProjectElement = document.querySelector('div.title');
+	let textImageElement = document.querySelector('.image-text');
 
 	const sections = document.querySelectorAll('section');
 
 	sections.forEach((section, indexSection) => {
 		//-38
 		if (section.offsetTop - 8 <= pixels) {
+			let textImage = section.getAttribute('data-text');
 			let titleProject = section.getAttribute('data-title');
 
 			//important!
+			textImageElement.textContent = textImage;
 			titleProjectElement.innerHTML = '';
 			titleProject.split('').forEach((letter, indexLetter) => {
 				let spanLetter = document.createElement('span');
 				spanLetter.textContent += letter;
-				// textImageElement.innerHTML += textImage;
+				textImageElement.innerHTML = textImage;
 
 				if (sections[indexSection + 1] !== undefined) {
 					let pixelRatio = (pixels - section.offsetTop) * 0.01;
@@ -58,6 +61,15 @@ document.addEventListener('scroll', function () {
 						'font-variation-settings',
 						`'wght' ${followingTitleLetter - 10 + pixelRatio}`
 					);
+
+					if (followingTitleLetter == 540) {
+						spanLetter.classList.add('erase');
+						spanLetter.style.opacity = `${0.2 / pixelRatio}`;
+					}
+
+					if (letter == '_') {
+						spanLetter.style.opacity = `${0.09 * pixelRatio}`;
+					}
 				} else {
 					spanLetter.classList.add('last-project');
 				}
@@ -81,3 +93,21 @@ document.addEventListener('scroll', function () {
 
 //+ un positionnnement sticky du scroll
 //decomposer en plusieurs fonctions
+
+// let img = document.querySelectorAll('img');
+
+// let curentPixel = window.pageYOffset;
+// const looper = function looper() {
+// 	const newPixel = window.pageYOffset;
+// 	const diff = newPixel - curentPixel;
+// 	const speed = diff * 0.01;
+// 	// console.log(diff);
+// 	img.forEach((image, index) => {
+// 		image.style.transform = 'skewY(' + speed + 'deg)';
+// 		// image.style.transitionDelay = `${index * 0.1}`;
+// 	});
+
+// 	curentPixel = newPixel;
+// 	requestAnimationFrame(looper);
+// };
+// looper();
