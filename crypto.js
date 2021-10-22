@@ -30,84 +30,58 @@ let alpha = [
 	(_ = 540),
 ];
 
-document.addEventListener('scroll', function () {
-	const pixels = window.pageYOffset;
-	const titleProjectElement = document.querySelector('div.title');
-	let textImageElement = document.querySelector('.image-text');
+function onScroll() {
+	document.addEventListener('scroll', function () {
+		const pixels = window.pageYOffset;
+		const titleProjectElement = document.querySelector('div.title');
+		let textImageElement = document.querySelector('.image-text');
 
-	const sections = document.querySelectorAll('section');
+		const sections = document.querySelectorAll('section');
+		sections.forEach((section, indexSection) => {
+			//-38
+			if (section.offsetTop - 8 <= pixels) {
+				let textImage = section.getAttribute('data-text');
+				//get the value of each title
+				let titleProject = section.getAttribute('data-title');
+				textImageElement.textContent = textImage;
+				//important
+				titleProjectElement.innerHTML = '';
+				titleProject.split('').forEach((letter, indexLetter) => {
+					//create span for each title's letter
+					let spanLetter = document.createElement('span');
+					spanLetter.textContent += letter;
+					textImageElement.innerHTML = textImage;
 
-	sections.forEach((section, indexSection) => {
-		//-38
-		if (section.offsetTop - 8 <= pixels) {
-			let textImage = section.getAttribute('data-text');
-			let titleProject = section.getAttribute('data-title');
+					//check if the title is not the last
+					if (sections[indexSection + 1] !== undefined) {
+						let pixelRatio = (pixels - section.offsetTop) * 0.01;
 
-			//important!
-			textImageElement.textContent = textImage;
-			titleProjectElement.innerHTML = '';
-			titleProject.split('').forEach((letter, indexLetter) => {
-				let spanLetter = document.createElement('span');
-				spanLetter.textContent += letter;
-				textImageElement.innerHTML = textImage;
+						//get the value of the letter in the following title
+						let folowwingTitle = sections[indexSection + 1].getAttribute('data-title');
+						eval('var followingTitleLetter =' + folowwingTitle.split('')[indexLetter]);
 
-				if (sections[indexSection + 1] !== undefined) {
-					let pixelRatio = (pixels - section.offsetTop) * 0.01;
-
-					let folowwingTitle = sections[indexSection + 1].getAttribute('data-title');
-					eval('var followingTitleLetter =' + folowwingTitle.split('')[indexLetter]);
-					//pixel ratio doit faire à la fin un truc proche de 10 max
-					spanLetter.style.setProperty(
-						'font-variation-settings',
-						`'wght' ${followingTitleLetter - 10 + pixelRatio}`
-					);
-
-					if (followingTitleLetter == 540) {
-						spanLetter.classList.add('erase');
-						spanLetter.style.opacity = `${0.2 / pixelRatio}`;
+						//add style with the correct value, and animate it with the pixelRatio (scroll)
+						spanLetter.style.setProperty(
+							'font-variation-settings',
+							`'wght' ${followingTitleLetter - 10 + pixelRatio}`
+						);
+						//check if the next letter is '_'
+						if (followingTitleLetter == 540) {
+							spanLetter.classList.add('erase');
+							spanLetter.style.opacity = `${0.2 / pixelRatio}`;
+						}
+						//check if the current letter is '_'
+						if (letter == '_') {
+							spanLetter.style.opacity = `${0.09 * pixelRatio}`;
+						}
+					} else {
+						spanLetter.classList.add('last-project');
 					}
 
-					if (letter == '_') {
-						spanLetter.style.opacity = `${0.09 * pixelRatio}`;
-					}
-				} else {
-					spanLetter.classList.add('last-project');
-				}
-
-				titleProjectElement.appendChild(spanLetter);
-			});
-		}
+					titleProjectElement.appendChild(spanLetter);
+				});
+			}
+		});
 	});
-});
-
-//ajouter une ancre sur chaque sections pour amelirorer la transition
-//! l'ancre doit se dfaire un peu avant le haut de la section pour pouvoir voir la transition
-
-//You can easily do that using a CSS transition. First you turn the opacity of the fields to 0, and then you replace the content and you make the fields appear again.
-
-// opacité à 0 jusqu'à la fin de la transsition
-// bloquer le scroll jusque la fin de la transition
-
-//faire la wght eactive en fonction des 1000px de la section pour faire le -10 avec le scroll
-//faire commencer l'animaation plus tard
-
-//+ un positionnnement sticky du scroll
-//decomposer en plusieurs fonctions
-
-// let img = document.querySelectorAll('img');
-
-// let curentPixel = window.pageYOffset;
-// const looper = function looper() {
-// 	const newPixel = window.pageYOffset;
-// 	const diff = newPixel - curentPixel;
-// 	const speed = diff * 0.01;
-// 	// console.log(diff);
-// 	img.forEach((image, index) => {
-// 		image.style.transform = 'skewY(' + speed + 'deg)';
-// 		// image.style.transitionDelay = `${index * 0.1}`;
-// 	});
-
-// 	curentPixel = newPixel;
-// 	requestAnimationFrame(looper);
-// };
-// looper();
+}
+onScroll();

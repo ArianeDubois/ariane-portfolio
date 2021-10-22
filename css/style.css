@@ -1,6 +1,6 @@
 @font-face {
   font-family: "crypto";
-  src: url("/TYPOCRYPTO_S4_FINGX.ttf");
+  src: url("../TYPOCRYPTO_S4_FINGX.ttf");
 }
 * {
   margin: 0;
@@ -63,7 +63,6 @@ ul {
 
 .infos {
   scroll-snap-type: mandatory;
-  /* scroll-snap-points-y: repeat(1000px); */
   scroll-snap-type: y mandatory;
 }
 

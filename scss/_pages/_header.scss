@@ -1,7 +1,6 @@
 .header {
 	color: black;
 	position: fixed;
-	// flex-direction: column-reverse;
 	height: 100%;
 	top: 0;
 	left: 0;
@@ -33,7 +32,6 @@
 		position: fixed;
 		font-family: Arial, Helvetica, sans-serif;
 		margin-top: 11%;
-		// margin-top: 18%;
 		width: 45%;
 		text-transform: uppercase;
 		margin-left: 45px;
@@ -60,9 +58,7 @@ ul {
 }
 .infos {
 	scroll-snap-type: mandatory;
-	/* scroll-snap-points-y: repeat(1000px); */
 	scroll-snap-type: y mandatory;
-	// width: 5%;
 }
 
 span {
@@ -73,24 +69,3 @@ span {
 .last-project {
 	font-variation-settings: 'wght' 10;
 }
-
-// .erase {
-// 	opacity: 0.2;
-// 	// animation: efface 0.5s ease-in-out 1s;
-// 	// transition: opacity 0.5s ease-in-out 1s;
-
-// 	// transition: opacity 0.5s ease-in;
-// 	// color: white;
-// }
-// .border {
-// 	border-bottom: 13px solid white;
-// }
-
-// @keyframes efface {
-// 	0% {
-// 		opacity: 1;
-// 	}
-// 	100% {
-// 		opacity: 0;
-// 	}
-// }
