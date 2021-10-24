@@ -34,7 +34,7 @@ function onScroll() {
 	document.addEventListener('scroll', function () {
 		const pixels = window.pageYOffset;
 		const titleProjectElement = document.querySelector('div.title');
-		let textImageElement = document.querySelector('.image-text');
+		let textImageElement = document.querySelector('.text-project');
 
 		const sections = document.querySelectorAll('section');
 		sections.forEach((section, indexSection) => {

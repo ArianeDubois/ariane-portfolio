@@ -1,10 +1,12 @@
-.header {
+.content-left {
 	color: black;
 	height: 100%;
-	&-navigation {
+	width: 50%;
+
+	&_navigation {
 		position: fixed;
-		width: 100%;
 		justify-content: space-between;
+		width: 50%;
 
 		li {
 			margin: 5px;
@@ -21,8 +23,8 @@
 		font-variation-settings: 'wght' 10;
 		color: black;
 	}
-	.image-text {
-		font-size: 20px;
+	.text-project {
+		@include font-text;
 		color: rgb(26, 26, 26);
 		position: fixed;
 		font-family: Arial, Helvetica, sans-serif;
@@ -32,32 +34,23 @@
 		margin-left: 45px;
 	}
 
-	&-footer {
+	.text-description {
+		@include font-text;
 		position: fixed;
 		bottom: 3%;
 		width: 45%;
-		text-transform: uppercase;
-		font-family: Arial, Helvetica, sans-serif;
 		margin-left: 45px;
-		font-size: 20px;
 	}
 }
 
 ul {
+	@include font-text;
 	display: flex;
 	justify-content: space-between;
-	font-size: 18px;
-	font-family: Arial, Helvetica, sans-serif;
-	text-transform: uppercase;
 	list-style-type: none;
-}
-.infos {
-	scroll-snap-type: mandatory;
-	scroll-snap-type: y mandatory;
 }
 
 span {
-	line-height: 1em;
 	transition: all 0.5s ease-in-out 10s;
 }
 
