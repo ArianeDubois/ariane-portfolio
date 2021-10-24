@@ -1,13 +1,9 @@
 .header {
 	color: black;
-	position: fixed;
 	height: 100%;
-	top: 0;
-	left: 0;
 	&-navigation {
 		position: fixed;
 		width: 100%;
-
 		justify-content: space-between;
 
 		li {
@@ -20,7 +16,6 @@
 		font-family: 'crypto';
 		background-color: none;
 		font-size: 180px;
-		line-height: 0;
 		margin-left: 45px;
 		text-transform: uppercase;
 		font-variation-settings: 'wght' 10;
